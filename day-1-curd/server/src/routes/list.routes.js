@@ -3,6 +3,7 @@ import {
   createListController,
   deleteList,
   getAllListController,
+  getOneListController,
   updateList,
 } from "../controller/list.controller.js";
 
@@ -21,13 +22,16 @@ router.post("/update/:id", updateList);
 // @route   GET /api/list/getAll
 // @desc    Get all list items
 // @access  Public
-router.get("/getAll", getAllListController);
+router.get("/", getAllListController);
+
+// @route   GET /api/list/:id
+// @desc    Get one list item
+// @access  Public
+router.get("/:id", getOneListController);
 
 // @route   POST /api/list/delete/:id
 // @desc    Delete a list item
 // @access  Public
 router.post("/delete/:id", deleteList);
-
-
 
 export default router;
