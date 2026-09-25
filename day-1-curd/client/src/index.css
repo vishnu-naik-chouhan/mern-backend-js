@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
+/* 1. Load Google Fonts so the browser actually has them */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fira+Code:wght@400;500;600&display=swap');
+
+/* 2. Fix dark selector so it works whether .dark is on <html>, <body>, or a wrapper */
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: oklch(0.9821 0 0);
@@ -35,9 +39,12 @@
   --sidebar-accent-foreground: oklch(0.4015 0.0436 37.9587);
   --sidebar-border: oklch(0.8078 0 0);
   --sidebar-ring: oklch(0.7058 0 0);
-  --font-sans: Architects Daughter, sans-serif;
+
+  /* FIXED: Quoted font names with spaces */
+  --font-sans: "Architects Daughter", cursive, sans-serif;
   --font-serif: "Times New Roman", Times, serif;
   --font-mono: "Courier New", Courier, monospace;
+
   --radius: 0.625rem;
   --shadow-x: 1px;
   --shadow-y: 4px;
@@ -90,9 +97,12 @@
   --sidebar-accent-foreground: oklch(0.3211 0 0);
   --sidebar-border: oklch(0.4276 0 0);
   --sidebar-ring: oklch(0.8078 0 0);
-  --font-sans: Architects Daughter, sans-serif;
+
+  /* FIXED: Quoted font names with spaces */
+  --font-sans: "Architects Daughter", cursive, sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: "Fira Code", "Courier New", monospace;
+  --font-mono: "Fira Code", monospace;
+
   --radius: 0.625rem;
   --shadow-x: 1px;
   --shadow-y: 4px;
