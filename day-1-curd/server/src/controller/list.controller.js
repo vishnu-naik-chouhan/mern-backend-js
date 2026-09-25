@@ -76,6 +76,12 @@ export let deleteList = async () => {
   try {
     const { taskId } = req.params;
     const deletedList = await listModel.findByIdAndDelete(taskId);
+    if (!deleteList) {
+      return res.status(400).json({
+        success: false,
+        message: "List not found",
+      });
+    }
     return res.status(200).json({
       success: true,
       message: "List deleted successfully",
