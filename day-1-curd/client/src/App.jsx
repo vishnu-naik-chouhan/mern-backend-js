@@ -77,8 +77,8 @@ const App = () => {
 
       {/* Title */}
       <div className="w-full text-center py-2 shrink-0">
-        <h1 
-          className="text-6xl sm:text-7xl font-normal tracking-wide text-foreground italic select-none" 
+        <h1
+          className="text-6xl sm:text-7xl font-normal tracking-wide text-foreground italic select-none"
           style={{ fontFamily: 'var(--font-sans)' }}
         >
           Tasks
@@ -88,7 +88,7 @@ const App = () => {
       {/* Scrollable Container (Only this section scrolls) */}
       <main className="w-full max-w-5xl mx-auto px-6 sm:px-12 flex-1 overflow-y-auto my-4 scrollbar-thin scrollbar-thumb-border">
         <div className="grid grid-cols-[100px_1fr] relative min-h-full">
-          
+
           {/* Vertical Timeline Divider Rule */}
           <div className="absolute left-[100px] top-0 bottom-0 w-[1px] bg-border" />
 
